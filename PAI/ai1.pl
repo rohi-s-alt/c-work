@@ -13,4 +13,7 @@ mother(sita,lov,kush).
 mother(mandvi,taksha,pushkala).
 mother(urmila,angada,chandraketu).
 mother(shrutikeerti,subahu,shatrughati).
+% ; ifelse
+% , and
 mother(P,Q):-mother(P,Q,R);mother(P,R,Q).
+father(F,S):-wife(W,F),mother(W,S).
