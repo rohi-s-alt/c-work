@@ -78,11 +78,22 @@ void insert() {
 	pretemp->nxt=fst;
 }
 
+void delete() {
+    printf("Deleting at the end\n");
+    pretemp=fst;
+	do {
+		pretemp=pretemp->nxt;
+	} while((pretemp->nxt)->nxt!=fst);
+    printf("Element with college ID %d deleted successfully.\n", (pretemp->nxt)->id);
+    free(pretemp->nxt);
+    pretemp->nxt=fst;
+}
+
 int main(){
 	int c;
 	do {
-		printf("Enter 1 to Create\nEnter 2 to display\nEnter 3 to insert at the front\nEnter 4 to Exit the Program\n");
-		printf("Input Choice (1,2,3,4) : ");
+		printf("Enter 1 to Create\nEnter 2 to display\nEnter 3 to insert at the front\nEnter 4 to delete at the end\nEnter 5 to Exit the Program\n");
+		printf("Input Choice (1,2,3,4,5) : ");
 		scanf("%d",&c);
 		switch(c) {
 			case 1:
@@ -94,6 +105,9 @@ int main(){
 			case 3:
 				insert();
 				break;
+            case 4:
+                delete();
+                break;
 			default:
 				exit(0);
 		}
