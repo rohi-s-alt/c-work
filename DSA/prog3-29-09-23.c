@@ -19,7 +19,6 @@ S *nw = NULL;
 void create() {
 	printf("Create And Insert Elements to the linked list\n");
 	
-	int i;
 	temp = (S*) malloc(sizeof(S*));
 	if(temp==NULL) {
 		printf("No Space");
@@ -40,24 +39,28 @@ void create() {
 }
 
 void display() {
-	printf("Display the Linked List\n");
+	printf("\nDisplay the Linked List\n");
 	int count;
 	temp=fst;
-	do {
-		printf("\nRecord %d\n", count+1);
-		printf("College ID : %d\n", temp->id);
-		printf("College Name : %s\n", temp->name);
-		count++;
-		temp=temp->nxt;
-	} while(temp!=fst);
-	
+    if(temp==NULL) {
+		printf("\nList is Empty.\n");
+	} else {
+        do {
+            printf("\nRecord %d\n", count+1);
+            printf("College ID : %d\n", temp->id);
+            printf("College Name : %s\n", temp->name);
+            count++;
+            temp=temp->nxt;
+        } while(temp!=fst);
+    }	
 }
 
 void insert() {
 	printf("insertion at the front\n");
+    pretemp=fst;
 	do {
 		pretemp=pretemp->nxt;
-	} while(pretemp!=fst);
+	} while(pretemp->nxt!=fst);
 	
 	nw = (S*) malloc(sizeof(S*));
 	if(nw==NULL) {
@@ -69,14 +72,16 @@ void insert() {
 	printf("Enter College Name:");
 	scanf("%s", nw->name);
 	
-	pretemp->nxt=nw; //
+    
 	nw->nxt=fst;
+    fst = nw;
+	pretemp->nxt=fst;
 }
 
-void main(){
+int main(){
 	int c;
 	do {
-		printf("Enter 1 to Create\nEnter 2 to display\nEnter 3 to insert at specific position\nEnter 4 to Exit the Program\n");
+		printf("Enter 1 to Create\nEnter 2 to display\nEnter 3 to insert at the front\nEnter 4 to Exit the Program\n");
 		printf("Input Choice (1,2,3,4) : ");
 		scanf("%d",&c);
 		switch(c) {
@@ -93,4 +98,5 @@ void main(){
 				exit(0);
 		}
 	} while(1);
+    return 0;
 }
