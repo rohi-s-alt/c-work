@@ -1,0 +1,41 @@
+Enter 1 to Enqueue
+Enter 2 to Dequeue
+Enter 3 to display the queue
+Enter 4 to Exit the Program 
+ 
+Input Choice (1,2,3,4) : 1
+Enter Data : 10
+ 
+Input Choice (1,2,3,4) : 1
+Enter Data : 20
+ 
+Input Choice (1,2,3,4) : 1
+Enter Data : 30
+ 
+Input Choice (1,2,3,4) : 3
+queue : 
+10
+20
+30
+ 
+Input Choice (1,2,3,4) : 2
+10 deleted Successfully.
+
+Input Choice (1,2,3,4) : 3
+queue : 
+20
+30
+
+Input Choice (1,2,3,4) : 2
+20 deleted Successfully.
+
+Input Choice (1,2,3,4) : 2
+30 deleted Successfully.
+
+Input Choice (1,2,3,4) : 2
+queue is empty.
+
+Input Choice (1,2,3,4) : 3
+No element to diplay.
+
+Input Choice (1,2,3,4) : 4
