@@ -1,0 +1,55 @@
+Enter 1 to Create
+Enter 2 to display
+Enter 3 to insert at the front
+Enter 4 to delete at the end
+Enter 5 to Exit the Program
+Input Choice (1,2,3,4,5) : 1
+Create And Insert Elements to the doubly linked list
+Enter Employee ID :101
+Enter Department ID :1101
+Input Choice (1,2,3,4,5) : 1
+Create And Insert Elements to the doubly linked list
+Enter Employee ID :102
+Enter Department ID :1102
+Input Choice (1,2,3,4,5) : 2
+Display the Doubly Linked List
+
+Record 1
+Employee ID : 101
+Department ID : 1101
+
+Record 2
+Employee ID : 102
+Department ID : 1102
+Input Choice (1,2,3,4,5) : 3
+Inserting at the front
+Enter Employee ID :100
+Enter Department ID :1102
+Input Choice (1,2,3,4,5) : 2
+Display the Doubly Linked List
+
+Record 1
+Employee ID : 100
+Department ID : 1102
+
+Record 2
+Employee ID : 101
+Department ID : 1101
+
+Record 3
+Employee ID : 102
+Department ID : 1102
+Input Choice (1,2,3,4,5) : 4
+Deleting at the end
+Employee ID 102 deleted successfully.
+Input Choice (1,2,3,4,5) : 2
+Display the Doubly Linked List
+
+Record 1
+Employee ID : 100
+Department ID : 1102
+
+Record 2
+Employee ID : 101
+Department ID : 1101
+Input Choice (1,2,3,4,5) : 5
