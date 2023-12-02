@@ -18,8 +18,7 @@ S *nw = NULL;
 
 void create() {
 	printf("Create And Insert Elements to the linked list\n");
-	
-	int i;
+
 	temp = (S*) malloc(sizeof(S*));
 	if(temp==NULL) {
 		printf("No Space");
@@ -38,46 +37,17 @@ void create() {
 		ptr->nxt=temp;
 	}
 	ptr=temp;
-	
+	printf("Record Entered Successfully.\n");	
 }
 
-void create_n() {
-	printf("Create And Insert Elements to the linked list\n");
-	
-	int i, elem;
-	printf("Enter number of elements : ");
-	scanf("%d", &elem);
-	for(i=0; i<elem; i++) {
-		free(temp);
-		temp = NULL;
-		temp = (S*) malloc(sizeof(S*));
-		if(temp==NULL) {
-			printf("No Space");
-			exit(0);
-		}
-		printf("Enter Roll Number:");
-		scanf("%d", &temp->rollno);
-		printf("Enter Name:");
-		scanf("%s", &temp->name);
-		printf("Enter Attendance:");
-		scanf("%d", &temp->atd);
-		temp->nxt = NULL;
-		if (fst==NULL) {
-			fst = temp;
-		} else {
-			ptr->nxt=temp;
-		}
-		ptr=temp;
-	}
-}
 void display() {
 	printf("Display the Linked List\n");
 	int count;
 	for(temp=fst;temp!=NULL;temp=temp->nxt) {
-		printf("\nRecord %d\n", count+1);
+		printf("Record %d\n", count+1);
 		printf("Roll Number : %d\n", temp->rollno);
 		printf("Name : %s\n", temp->name);
-		printf("Attendance : %d\n", temp->atd);
+		printf("Attendance : %d\n\n", temp->atd);
 		count++;
 	}
 }
@@ -108,8 +78,9 @@ void insert_pos() {
 	temp = pretemp->nxt;
 	pretemp->nxt=nw; //
 	nw->nxt=temp;
+	printf("Record Inserted Successfully\n");
 }
-void main(){
+int main(){
 	int c;
 	do {
 		printf("Enter 1 to Create\nEnter 2 to display\nEnter 3 to insert at specific position\nEnter 4 to Exit the Program\n");
@@ -128,15 +99,6 @@ void main(){
 			default:
 				exit(0);
 		}
-		/*
-		printf("Run Again? (press 1 for yes/press 0 for no)");
-		scanf("%d",&c);
-		switch(c) {
-			case 1:
-				break;
-			default:
-				exit(0);
-		}
-		*/
 	} while(1);
+	return 0;
 }
