@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Object Example</title>
+</head>
+
+<body>
+
+    <script>
+        // Define a constructor function for creating objects
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        // Add a method to the Person prototype
+        Person.prototype.introduce = function () {
+            return `Hi, I'm ${this.name} and I'm ${this.age} years old.`;
+        };
+
+        // Create instances of the Person object
+        const person1 = new Person("Alice", 25);
+        const person2 = new Person("Bob", 30);
+
+        // Output the result to the document
+        document.write('<p>' + person1.introduce() + '</p>');
+        document.write('<p>' + person2.introduce() + '</p>');
+    </script>
+
+</body>
+
+</html>

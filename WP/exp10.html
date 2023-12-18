@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    input,
+    select,
+    button {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Unit Converter</h2>
+
+  <label for="fromUnit">From Unit:</label>
+  <select id="fromUnit">
+    <option value="meter">Meter</option>
+    <option value="kilometer">Kilometer</option>
+    <!-- Add more unit options as needed -->
+  </select>
+
+  <br>
+
+  <label for="value">Value:</label>
+  <input type="number" id="value" placeholder="Enter value">
+
+  <br>
+
+  <label for="toUnit">To Unit:</label>
+  <select id="toUnit">
+    <option value="meter">Meter</option>
+    <option value="kilometer">Kilometer</option>
+    <!-- Add more unit options as needed -->
+  </select>
+
+  <br>
+
+  <button onclick="convert()">Convert</button>
+
+  <h3>Result:</h3>
+  <p id="result">Result will be displayed here.</p>
+
+  <script>
+    function convert() {
+      // Get user inputs
+      var fromUnit = document.getElementById("fromUnit").value;
+      var toUnit = document.getElementById("toUnit").value;
+      var value = parseFloat(document.getElementById("value").value);
+
+      // Perform conversion
+      var result;
+      if (fromUnit === "meter" && toUnit === "kilometer") {
+        result = value / 1000;
+      } else if (fromUnit === "kilometer" && toUnit === "meter") {
+        result = value * 1000;
+      } else {
+        result = "Invalid conversion";
+      }
+
+      // Display result
+      document.getElementById("result").innerHTML = result;
+    }
+  </script>
+
+</body>
+
+</html>

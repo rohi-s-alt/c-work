@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Number Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Random Number Generator</h1>
+  <p>Click the button to generate a random number:</p>
+
+  <button onclick="generateRandomNumber()">Generate Random Number</button>
+  <p id="randomNumber"></p>
+
+  <script>
+    function generateRandomNumber() {
+      const min = parseInt(prompt("Enter the minimum value:")) || 0;
+      const max = parseInt(prompt("Enter the maximum value:")) || 100;
+
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+      document.getElementById("randomNumber").innerText = `Random Number: ${randomNumber}`;
+    }
+  </script>
+
+</body>
+
+</html>
