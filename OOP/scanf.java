@@ -1,4 +1,4 @@
-package rohit;
+
 import java.util.Scanner;
 
 public class scanf {

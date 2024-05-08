@@ -13,6 +13,6 @@ public class rectangle {
         return x * y;
     }
     static float perimeter(float x, float y) {
-        return x*2 + y*2;
+        return 2*(x+y);
     }
 }

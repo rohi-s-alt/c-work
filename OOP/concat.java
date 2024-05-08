@@ -1,4 +1,3 @@
-package rohit;
 
 public class concat {
 

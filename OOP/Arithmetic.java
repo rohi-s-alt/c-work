@@ -1,7 +1,5 @@
-package rohit;
 
 public class Arithmetic {
-
 	public static void main(String[] args) {
 		int res = 11 + 25; 
 		System.out.println("11 + 25 = " + res);
@@ -22,8 +20,5 @@ public class Arithmetic {
 		res = res % 7;
 		System.out.println(ogRes + " % 2 = " + res);
 		ogRes = res;
-		
-
 	}
-
 }
