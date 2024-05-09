@@ -1,0 +1,104 @@
+
+test> use mydatabase
+switched to db mydatabase
+
+mydatabase> db.createCollection("mycollection")
+{ ok: 1 }
+mydatabase> show collections
+mycollection
+
+mydatabase> db.mycollection.insertOne({ name: "John", age: 30 })
+{
+  acknowledged: true,
+  insertedId: ObjectId('662a881e677a8cd27d46b79d')
+}
+mydatabase> db.mycollection.insertMany([
+... { name: "Alice", age: 25 },
+... { name: "Bob", age: 35 }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('662a883b677a8cd27d46b79e'),
+    '1': ObjectId('662a883b677a8cd27d46b79f')
+  }
+}
+
+mydatabase> db.mycollection.find()
+[
+  { _id: ObjectId('662a881e677a8cd27d46b79d'), name: 'John', age: 30 },
+  { _id: ObjectId('662a883b677a8cd27d46b79e'), name: 'Alice', age: 25 },
+  { _id: ObjectId('662a883b677a8cd27d46b79f'), name: 'Bob', age: 35 }
+]
+mydatabase> db.mycollection.find({ name: "John" })
+[
+  { _id: ObjectId('662a881e677a8cd27d46b79d'), name: 'John', age: 30 }
+]
+mydatabase> db.mycollection.updateOne({ name: "John" }, { $set: { age: 32 } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+mydatabase> db.mycollection.find()
+[
+  { _id: ObjectId('662a881e677a8cd27d46b79d'), name: 'John', age: 32 },
+  { _id: ObjectId('662a883b677a8cd27d46b79e'), name: 'Alice', age: 25 },
+  { _id: ObjectId('662a883b677a8cd27d46b79f'), name: 'Bob', age: 35 }
+]
+mydatabase> db.mycollection.updateMany({ age: { $gt: 30 } }, { $set: { status: "adult" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+mydatabase> db.mycollection.find()
+[
+  {
+    _id: ObjectId('662a881e677a8cd27d46b79d'),
+    name: 'John',
+    age: 32,
+    status: 'adult'
+  },
+  { _id: ObjectId('662a883b677a8cd27d46b79e'), name: 'Alice', age: 25 },
+  {
+    _id: ObjectId('662a883b677a8cd27d46b79f'),
+    name: 'Bob',
+    age: 35,
+    status: 'adult'
+  }
+]
+mydatabase> db.mycollection.deleteOne({ name: "John" })
+{ acknowledged: true, deletedCount: 1 }
+mydatabase> db.mycollection.find()
+[
+  { _id: ObjectId('662a883b677a8cd27d46b79e'), name: 'Alice', age: 25 },
+  {
+    _id: ObjectId('662a883b677a8cd27d46b79f'),
+    name: 'Bob',
+    age: 35,
+    status: 'adult'
+  }
+]
+mydatabase> db.mycollection.deleteMany({ age: { $lt: 30 } })
+{ acknowledged: true, deletedCount: 1 }
+mydatabase> db.mycollection.find()
+[
+  {
+    _id: ObjectId('662a883b677a8cd27d46b79f'),
+    name: 'Bob',
+    age: 35,
+    status: 'adult'
+  }
+]
+mydatabase> db.mycollection.drop()
+true
+mydatabase> db.mycollection.find()
+
+mydatabase> db.dropDatabase()
+{ ok: 1, dropped: 'mydatabase' }
+mydatabase>
