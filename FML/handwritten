@@ -1,0 +1,105 @@
+Theory1: Linear regression is a statistical method used to model the relationship between a dependent 
+variable and one or more independent variables. The model assumes a linear relationship between the 
+variables, where the dependent variable can be predicted as a linear combination of the independent 
+variables, along with an error term. The equation of a simple linear regression model is represented as \( y 
+= mx + b \), where \( y \) is the dependent variable, \( x \) is the independent variable, \( m \) is the slope of 
+the line, and \( b \) is the y-intercept. The model is trained using the method of least squares, which 
+minimizes the sum of the squared differences between the observed and predicted values.
+Learning Outcome1: We learned about the principles of linear regression, including model assumptions, 
+parameter estimation, and model evaluation. We implemented linear regression in Python using libraries 
+such as scikit-learn, and interpreted the results to make predictions and assess model’s performance.
+Theory2: Logistic regression is a statistical method used for binary classification tasks, where the outcome 
+variable is categorical with two possible outcomes. Unlike linear regression, logistic regression models the 
+probability that a given input belongs to a particular category. It uses the logistic function, also known as 
+the sigmoid function, to map input features to a probability value between 0 and 1. The logistic function is 
+defined as \( P(Y=1|X) = \frac{1}{1 + e^{-(\beta_0 + \beta_1X)}} \), where \( P(Y=1|X) \) represents the 
+probability of the outcome being 1 given input \( X \), and \( \beta_0 \) and \( \beta_1 \) are the 
+coefficients to be estimated from the data.
+Learning Outcome2: We learned about the concept of logistic regression, understand the logistic function 
+and its use in predicting probabilities for binary outcomes. We implemented logistic regression models 
+using Python's scikit-learn library and evaluated model’s performance for classification tasks.
+Theory3: K Nearest Neighbors (KNN) is a simple yet powerful algorithm used for both classification and 
+regression tasks. It operates on the principle that data points with similar features tend to belong to the 
+same class or have similar values. In KNN, to classify a new data point, the algorithm identifies the K 
+nearest data points in the training set based on a distance metric (such as Euclidean distance) and assigns 
+the majority class (for classification) or the average value (for regression) among those neighbors to the 
+new data point.
+Learning Outcome3: We learned about the concept of KNN, including distance metrics and the influence of 
+the hyperparameter K on model performance. We implemented KNN algorithm in Python using libraries 
+such as scikit-learn, and applied it to dataset, interpreting results and tuning hyperparameters for better 
+performance.
+Theory4: Support Vector Machine (SVM) is a supervised learning algorithm used for classification tasks. It 
+works by finding the hyperplane that best separates the classes in the feature space. SVM aims to maximize 
+the margin, which is the distance between the hyperplane and the nearest data points from each class, 
+known as support vectors. The algorithm can handle linear and nonlinear classification problems through 
+the use of kernel functions like linear, polynomial, and radial basis function (RBF) kernels.
+
+Learning Outcome4: We learned about SVM principles, including margin maximization and support vectors.
+We implemented SVM classification in Python, explored kernel functions, and interpreted classification 
+results for real-world applications.
+Theory5: Bagging, short for Bootstrap Aggregating, is an ensemble learning technique used to improve the 
+performance of machine learning models by combining multiple base models. Random Forest is a popular 
+implementation of bagging that utilizes decision trees as base models. In Random Forest, multiple decision 
+trees are trained on random subsets of the training data with replacement, and predictions are made by 
+aggregating the predictions of individual trees through averaging (for regression) or voting (for 
+classification).
+Random Forests offer several advantages, including robustness to overfitting, resilience to noisy data, and 
+the ability to handle high-dimensional feature spaces. Additionally, by averaging or voting over multiple 
+trees, Random Forests provide more stable and accurate predictions compared to individual decision trees.
+Learning Outcome5: We learned about the concept of bagging and Random Forests, including the 
+principles of ensemble learning and decision tree aggregation. We implemented Random Forest 
+classification and regression in Python using libraries such as scikit-learn, and evaluated model’s
+performance for a dataset, gaining insights into ensemble methods.
+Theory6: Naive Bayes is a probabilistic machine learning algorithm based on Bayes' theorem, which 
+describes the probability of an event, given prior knowledge of conditions related to the event. Despite its 
+simplicity and "naive" assumption of feature independence, Naive Bayes can be remarkably effective in 
+classification tasks.
+Naive Bayes calculates the probability of each class for a given set of features and assigns the class with the 
+highest probability as the predicted class. It assumes that the features are conditionally independent given 
+the class label, meaning that the presence of one feature does not affect the presence of another feature. 
+This assumption simplifies the computation of probabilities and makes the algorithm efficient, especially 
+for text classification and spam filtering.
+Learning Outcome6: We learned about the principles of Naive Bayes, including Bayes' theorem and the 
+assumption of feature independence. We implemented Naive Bayes classification in Python using libraries 
+like scikit-learn, applied it to real-world dataset, and interpreted classification results.
+Theory7: Decision Trees are versatile and interpretable supervised learning algorithms used for 
+classification and regression tasks. They partition the feature space into regions, guided by the values of 
+input features, and make predictions based on majority class (for classification) or average value (for 
+regression) within each region.
+Decision Trees operate by recursively splitting the data into subsets based on feature values that best 
+separate the target variable. The splits are determined using metrics like Gini impurity or entropy to 
+maximize information gain.
+
+
+Learning Outcome7: We learned about the principles of Decision Trees, including tree construction, 
+splitting criteria, and pruning techniques. We implement Decision Trees in Python using libraries like scikit-
+learn, interpreted tree structures, and evaluated model’s performance.
+Theory8: K-means clustering is an unsupervised machine learning algorithm used to partition a dataset into 
+K clusters based on similarity. It iteratively assigns data points to the nearest cluster centroid and updates 
+the centroids based on the mean of the points in each cluster. The algorithm converges when the cluster 
+assignments no longer change significantly.
+K-means clustering is widely used for data exploration, pattern recognition, and segmentation tasks. It is 
+computationally efficient and easy to implement, making it suitable for large datasets.
+Learning Outcome8: We learned about the principles of K-means clustering, including centroid 
+initialization, distance metrics, and convergence criteria. We implemented K-means clustering in Python 
+using libraries like scikit-learn, explored clustering solutions for different values of K, and interpreted cluster 
+assignments to identify natural patterns in data.
+Theory9: The Gaussian Mixture Model (GMM) is a probabilistic model representing a mixture of Gaussian 
+distributions. It assumes that the data is generated from a mixture of several Gaussian distributions with 
+unknown parameters. The Expectation Maximization (EM) algorithm is commonly used to estimate these 
+parameters iteratively. In the E-step, it computes the probability of each data point belonging to each 
+Gaussian component. In the M-step, it updates the parameters to maximize the likelihood of the observed 
+data. This process iterates until convergence, providing estimates of the means, covariances, and mixing 
+coefficients of the Gaussian components.
+Learning Outcome9: We learned about GMM and EM, and implemented them to model complex data 
+distributions effectively.
+Theory10: Classification based on association rules is a technique that combines association rule mining 
+with classification algorithms. Association rule mining identifies patterns or relationships in data, such as "if 
+{A, B} then {C}". Classification algorithms, on the other hand, predict the class labels of instances based on 
+their attributes. In this approach, association rules are used as features for classification. Each rule's 
+presence or absence in the dataset is treated as a binary attribute, and traditional classifiers are employed 
+to learn from these features and make predictions. This method leverages the strength of association rule 
+mining to capture complex relationships in the data and the predictive power of classification algorithms to 
+make accurate predictions.
+Learning Outcome10: We learned about how to integrate association rule mining with classification 
+algorithms to improve predictive performance and interpretability in data analysis tasks.
